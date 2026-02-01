@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-neon-blue: #00D4FF;
+  --color-neon-red: #FF1F1F;
+  --color-neon-blue-dark: #0099CC;
+  --color-emerald-success: #10B981;
+  --color-rose-alert: #F43F5E;
+  --color-amber-warning: #F59E0B;
+  --color-navy-950: #0a0e1a;
+  --color-navy-900: #0f1629;
+  --color-navy-800: #1a2744;
+  
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  --animate-pulse-slow: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-pulse-ring: pulse-ring 1.5s ease-out infinite;
+  --animate-flash: flash 1s ease-in-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0e1a 0%, #0f1629 50%, #1a2744 100%);
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a2744;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF1F1F40;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF1F1F60;
+}
+
+/* Glowing effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3), 0 0 40px rgba(0, 212, 255, 0.1);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), 0 0 40px rgba(16, 185, 129, 0.1);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.3), 0 0 40px rgba(244, 63, 94, 0.1);
+}
+
+.glow-red-neon {
+  box-shadow: 0 0 20px rgba(255, 31, 31, 0.3), 0 0 40px rgba(255, 31, 31, 0.1);
+}
+
+/* Glass morphism card */
+.glass-card {
+  background: rgba(15, 22, 41, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 31, 31, 0.15);
+  border-radius: 16px;
+}
+
+.glass-card-inner {
+  background: rgba(26, 39, 68, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 31, 31, 0.1);
+  border-radius: 12px;
+}
+
+/* Pulsing status indicator */
+.status-pulse {
+  position: relative;
+}
+
+.status-pulse::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: inherit;
+  animation: pulse-ring 1.5s ease-out infinite;
+  opacity: 0.5;
+}
+
+/* Ringing row flash animation */
+.row-ringing {
+  animation: flash 1s ease-in-out infinite;
+  background: rgba(0, 212, 255, 0.1);
+}
+
+/* Metric value animation */
+.metric-value {
+  background: linear-gradient(135deg, #00D4FF 0%, #00B4D8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Chart container */
+.chart-container {
+  background: rgba(15, 22, 41, 0.5);
+  border-radius: 12px;
+  padding: 1rem;
+}
