@@ -39,7 +39,7 @@ export default function MetricCard({ title, value, subtitle, icon: Icon, trend, 
   const getTrendColor = () => {
     if (trend === 'up') return 'text-emerald-400';
     if (trend === 'down') return 'text-rose-400';
-    return 'text-slate-400';
+    return 'text-slate-500';
   };
 
   return (
@@ -56,7 +56,7 @@ export default function MetricCard({ title, value, subtitle, icon: Icon, trend, 
         )}
       </div>
       <div className="space-y-1">
-        <p className="text-sm text-slate-400 font-medium">{title}</p>
+        <p className="text-sm text-slate-500 font-medium">{title}</p>
         <p className={`text-4xl font-bold bg-gradient-to-r ${colors.gradient} bg-clip-text text-transparent`}>
           {value}
         </p>

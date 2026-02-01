@@ -43,8 +43,8 @@ html, body, #root {
 }
 
 body {
-  background: linear-gradient(135deg, #0a0e1a 0%, #0f1629 50%, #1a2744 100%);
-  color: #f1f5f9;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: #0f172a;
   overflow-x: hidden;
 }
 
@@ -55,7 +55,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a2744;
+  background: #cbd5e1;
   border-radius: 4px;
 }
 
@@ -87,14 +87,15 @@ body {
 
 /* Glass morphism card */
 .glass-card {
-  background: rgba(15, 22, 41, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 31, 31, 0.15);
+  border: 1px solid rgba(255, 31, 31, 0.2);
   border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .glass-card-inner {
-  background: rgba(26, 39, 68, 0.5);
+  background: rgba(241, 245, 249, 0.6);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 31, 31, 0.1);
   border-radius: 12px;
@@ -118,7 +119,7 @@ body {
 /* Ringing row flash animation */
 .row-ringing {
   animation: flash 1s ease-in-out infinite;
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(255, 31, 31, 0.1);
 }
 
 /* Metric value animation */

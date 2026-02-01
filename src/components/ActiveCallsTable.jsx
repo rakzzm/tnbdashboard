@@ -42,7 +42,7 @@ export default function ActiveCallsTable() {
     if (status === 'Ringing') {
       return 'row-ringing';
     }
-    return 'hover:bg-slate-800/50 transition-colors';
+    return 'hover:bg-slate-50 transition-colors';
   };
 
   return (
@@ -53,7 +53,7 @@ export default function ActiveCallsTable() {
           <Phone className="w-5 h-5 text-neon-red" />
         </div>
         <div>
-          <h2 className="text-lg font-semibold text-white">Active Calls</h2>
+          <h2 className="text-lg font-semibold text-slate-900">Active Calls</h2>
           <p className="text-xs text-slate-400">Real-time Call Monitor</p>
         </div>
         <div className="ml-auto">
@@ -64,11 +64,11 @@ export default function ActiveCallsTable() {
       </div>
 
       {/* Table */}
-      <div className="overflow-hidden rounded-lg border border-slate-700/50">
+      <div className="overflow-hidden rounded-lg border border-slate-200">
         <table className="w-full">
           <thead>
-            <tr className="bg-slate-800/80">
-              <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider">
+            <tr className="bg-slate-100">
+              <th className="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">
                 Caller ID
               </th>
               <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider">
@@ -82,15 +82,15 @@ export default function ActiveCallsTable() {
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-700/50">
+          <tbody className="divide-y divide-slate-200">
             {calls.map((call) => (
               <tr key={call.id} className={getRowClass(call.status)}>
                 <td className="px-4 py-3">
-                  <span className="font-mono text-sm text-white">{call.callerId}</span>
+                  <span className="font-mono text-sm text-slate-900">{call.callerId}</span>
                 </td>
                 <td className="px-4 py-3">
                   <div className="flex flex-col">
-                    <span className="text-sm text-white">{call.targetAgent}</span>
+                    <span className="text-sm text-slate-900">{call.targetAgent}</span>
                     <span className="text-xs text-slate-500">Ext. {call.extension}</span>
                   </div>
                 </td>

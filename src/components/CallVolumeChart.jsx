@@ -36,7 +36,7 @@ export default function CallVolumeChart() {
           <BarChart3 className="w-5 h-5 text-neon-red" />
         </div>
         <div>
-          <h2 className="text-lg font-semibold text-white">Call Volume by Hour</h2>
+          <h2 className="text-lg font-semibold text-slate-900">Call Volume by Hour</h2>
           <p className="text-xs text-slate-400">Imagicle Analytics Data</p>
         </div>
       </div>

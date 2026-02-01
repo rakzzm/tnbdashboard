@@ -25,7 +25,7 @@ export default function AgentStateCard({ agent }) {
 
       {/* Agent Info */}
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-medium text-white truncate">{agent.name}</p>
+        <p className="text-sm font-medium text-slate-900 truncate">{agent.name}</p>
         <p className="text-xs text-slate-500">Ext. {agent.extension}</p>
       </div>
 

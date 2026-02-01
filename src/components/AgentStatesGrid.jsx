@@ -44,7 +44,7 @@ export default function AgentStatesGrid() {
             <Users className="w-5 h-5 text-neon-red" />
           </div>
           <div>
-            <h2 className="text-lg font-semibold text-white">Agent States</h2>
+            <h2 className="text-lg font-semibold text-slate-900">Agent States</h2>
             <p className="text-xs text-slate-400">CTI Real-time Status</p>
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function AgentStatesGrid() {
                 className="w-2 h-2 rounded-full"
                 style={{ backgroundColor: statusColors[state] }}
               />
-              <span className="text-sm text-slate-400">
+              <span className="text-sm text-slate-500">
                 {count} <span className="hidden sm:inline">{state}</span>
               </span>
             </div>

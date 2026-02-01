@@ -38,7 +38,7 @@ export default function Header() {
           <img src="/tnb-logo.png" alt="TNB Logo" className="w-8 h-8 object-contain" />
         </div>
         <div>
-          <h1 className="text-2xl font-bold text-white tracking-tight">
+          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
             TNB <span className="text-neon-red">Wallboard</span>
           </h1>
           <p className="text-sm text-slate-400">Call Center Supervisor Dashboard</p>

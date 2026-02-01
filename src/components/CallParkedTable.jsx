@@ -10,27 +10,29 @@ export default function CallParkedTable() {
           <PlayCircle className="w-5 h-5 text-neon-red" />
         </div>
         <div>
-          <h2 className="text-lg font-semibold text-white">Call Parked</h2>
+          <h2 className="text-lg font-semibold text-slate-900">Call Parked</h2>
           <p className="text-xs text-slate-400">Currently Parked Calls</p>
         </div>
       </div>
 
       {/* Table */}
-      <div className="overflow-hidden rounded-lg border border-slate-700/50">
+      <div className="overflow-hidden rounded-lg border border-slate-200">
         <table className="w-full">
           <thead>
-            <tr className="bg-slate-800/80">
-              <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider">Caller ID</th>
+            <tr className="bg-slate-100">
+              <th className="px-4 py-3 text-left text-xs font-semibold text-slate-500 uppercase tracking-wider">Caller ID</th>
               <th className="px-4 py-3 text-left text-xs font-semibold text-slate-400 uppercase tracking-wider">Parked By</th>
               <th className="px-4 py-3 text-center text-xs font-semibold text-slate-400 uppercase tracking-wider">Duration</th>
               <th className="px-4 py-3 text-right text-xs font-semibold text-slate-400 uppercase tracking-wider">Ext</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-700/50">
+          <tbody className="divide-y divide-slate-200">
             {parkedCalls.map((call) => (
-              <tr key={call.id} className="hover:bg-slate-800/50 transition-colors">
-                <td className="px-4 py-3 text-sm text-white font-mono">{call.callerId}</td>
-                <td className="px-4 py-3 text-sm text-slate-300">{call.parkedBy}</td>
+              <tr key={call.id} className="hover:bg-slate-50 transition-colors">
+                <td className="px-4 py-3">
+                  <span className="font-mono text-sm text-slate-900">{call.callerId}</span>
+                </td>
+                <td className="px-4 py-3 text-sm text-slate-900">{call.parkedBy}</td>
                 <td className="px-4 py-3 text-center">
                   <div className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-medium bg-slate-800 text-amber-400 border border-slate-700">
                     <Clock className="w-3 h-3" />
