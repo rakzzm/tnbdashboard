@@ -12,75 +12,74 @@ import { dailyMetrics } from './data/mockData';
 function App() {
   // Dashboard View
   return (
-    <div className="min-h-screen p-6">
-      {/* Header */}
-      <Header />
-
-      {/* Main Content */}
-      <div className="grid grid-cols-12 gap-6">
-        {/* Left Column - Active Calls & Parked Calls */}
-        <div className="col-span-12 lg:col-span-4 space-y-6">
-          <ActiveCallsTable />
-          <CallParkedTable />
-        </div>
-
-        {/* Right Column - Metrics & Charts */}
-        <div className="col-span-12 lg:col-span-8 space-y-6">
-          {/* Metrics Row */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            <MetricCard
-              title="Total Calls Today"
-              value={dailyMetrics.totalCalls.toLocaleString()}
-              subtitle="CUCM CDR Data"
-              icon={Phone}
-              trend="up"
-              trendValue="+12%"
-              color="neon-red"
-            />
-            <MetricCard
-              title="Abandoned Calls"
-              value={dailyMetrics.abandonedCalls}
-              subtitle="Target: < 50"
-              icon={PhoneOff}
-              trend="down"
-              trendValue="-8%"
-              color="neon-red"
-            />
-            <MetricCard
-              title="Avg Handle Time"
-              value={dailyMetrics.aht}
-              subtitle="Target: 5:00"
-              icon={Clock}
-              trend="up"
-              trendValue="+0:15"
-              color="neon-red"
-            />
-            <MetricCard
-              title="Service Level"
-              value={`${dailyMetrics.serviceLevel}%`}
-              subtitle="Target: 90%"
-              icon={Target}
-              trend="up"
-              trendValue="+2.4%"
-              color="neon-red"
-            />
-          </div>
-
-          {/* Call Volume Chart */}
-          <CallVolumeChart />
-
-          {/* Agent States */}
-          <AgentStatesGrid />
-
-          {/* Call Queue Status */}
-          <CallQueueStatus />
-        </div>
+    <div className="min-h-screen bg-slate-50 flex flex-col">
+      {/* Header - Stays outside the glassy background area */}
+      <div className="p-6 pb-0">
+        <Header />
       </div>
 
-      {/* Footer */}
-      <footer className="mt-8 text-center text-xs text-slate-600">
-        <p>TNB Supervisor Wallboard</p>
-      </footer>
+      {/* Main Content Area with Sky Blue Glassy Theme */}
+      <main className="flex-1 p-6 glassy-sky-bg">
+        <div className="grid grid-cols-12 gap-6 relative z-10">
+          {/* Left Column - Active Calls & Parked Calls */}
+          <div className="col-span-12 lg:col-span-4 space-y-6">
+            <ActiveCallsTable />
+            <CallParkedTable />
+          </div>
+
+          {/* Right Column - Metrics & Charts */}
+          <div className="col-span-12 lg:col-span-8 space-y-6">
+            {/* Metrics Row */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <MetricCard
+                title="Total Calls Today"
+                value={dailyMetrics.totalCalls.toLocaleString()}
+                subtitle="CUCM CDR Data"
+                icon={Phone}
+                trend="up"
+                trendValue="+12%"
+                color="neon-red"
+              />
+              <MetricCard
+                title="Abandoned Calls"
+                value={dailyMetrics.abandonedCalls}
+                subtitle="Target: < 50"
+                icon={PhoneOff}
+                trend="down"
+                trendValue="-8%"
+                color="neon-red"
+              />
+              <MetricCard
+                title="Avg Handle Time"
+                value={dailyMetrics.aht}
+                subtitle="Target: 5:00"
+                icon={Clock}
+                trend="up"
+                trendValue="+0:15"
+                color="neon-red"
+              />
+              <MetricCard
+                title="Service Level"
+                value={`${dailyMetrics.serviceLevel}%`}
+                subtitle="Target: 90%"
+                icon={Target}
+                trend="up"
+                trendValue="+2.4%"
+                color="neon-red"
+              />
+            </div>
+
+            <CallVolumeChart />
+            <AgentStatesGrid />
+            <CallQueueStatus />
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className="mt-8 text-center text-xs text-slate-600 relative z-10">
+          <p>TNB Supervisor Wallboard</p>
+        </footer>
+      </main>
     </div>
   );
 }

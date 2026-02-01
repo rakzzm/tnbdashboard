@@ -57,11 +57,8 @@ export default function Header() {
         <Clock className="w-6 h-6 text-slate-400" />
       </div>
 
-      {/* Right Section: Configure + System Status */}
+      {/* Right Section: System Status */}
       <div className="flex items-center gap-4">
-        {/* Configure Button */}
-
-
         {/* System Status */}
         <div className="flex items-center gap-3 glass-card-inner px-5 py-3">
           <div className="relative">

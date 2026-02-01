@@ -12,6 +12,9 @@
   --color-navy-950: #0a0e1a;
   --color-navy-900: #0f1629;
   --color-navy-800: #1a2744;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
   
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
@@ -135,4 +138,33 @@ body {
   background: rgba(15, 22, 41, 0.5);
   border-radius: 12px;
   padding: 1rem;
+}
+/* Glassy sky background with shining effect */
+.glassy-sky-bg {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.glassy-sky-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.glassy-overlay {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
